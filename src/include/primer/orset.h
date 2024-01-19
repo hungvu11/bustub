@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <set>
 
 namespace bustub {
 
@@ -55,11 +56,18 @@ class ORSet {
    * @brief Gets a string representation of the set.
    *
    * @return a string representation of the set.
+   * 
    */
   auto ToString() const -> std::string;
 
+  auto all_element() const -> std::set<std::pair<T, uid_t>>;
+
+  auto all_delete() const -> std::set<std::pair<T, uid_t>>;
+
  private:
   // TODO(student): Add your private memeber variables to represent ORSet.
+  std::set<std::pair<T, uid_t>> m_elements;
+  std::set<std::pair<T, uid_t>> m_deletes;
 };
 
 }  // namespace bustub
